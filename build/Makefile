@@ -1,4 +1,4 @@
-OUTPUT=./lib/libnumc.so
+OUTPUT=./lib/libnumc.dll
 OBJECTS=numarray.o
 all: $(OUTPUT)
 
@@ -18,9 +18,9 @@ clean-all:
 	rm -rf *.o
 	rm -rf ./test/*
 	rm -rf ./lib/*
-	rm -rf ./*.so
+	rm -rf ./*.dll
 
 test: ../test/test.c
-	gcc -Wall -g -o ./test/test-out $< -I$(INCLUDE) -L./lib -lnumc -lcunit
-	ln -s $(OUTPUT) ./libnumc.so
+	gcc -Wall -g -o ./test/test-out $< -I$(INCLUDE) -L./lib -lnumc -lbcunit
+	ln -s $(OUTPUT) ./libnumc.dll
 	./test/test-out

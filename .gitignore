@@ -32,3 +32,6 @@ test-out
 # Debug files
 *.dSYM/
 *.su
+
+# Other
+.Rhistory

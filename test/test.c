@@ -1,23 +1,15 @@
 #include <stdio.h>
-#include <CUnit/Basic.h>
-#include <CUnit/Console.h>
-#include <CUnit/Automated.h>
+#include <BCUnit/Basic.h>
+#include <BCUnit/Console.h>
+#include <BCUnit/Automated.h>
 #include <numarray.h>
 
-int init_suite_success(void) {
+int init_suite(void) {
   return 0;
 }
 
-int init_suite_failure(void) {
-  return -1;
-}
-
-int clean_suite_success(void) {
+int clean_suite(void) {
   return 0;
-}
-
-int clean_suite_failure(void) {
-  return -1;
 }
 
 void test_create(void)
@@ -109,7 +101,7 @@ int main()
 
   /* add a suite to the registry */
   pSuite =
-    CU_add_suite("Suite_numarray", init_suite_success, clean_suite_success);
+    CU_add_suite("Suite_numarray", init_suite, clean_suite);
 
   if (NULL == pSuite)
   {
