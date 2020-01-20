@@ -3,8 +3,8 @@
 void create(numarray *a, int length)
 {
   a->_length = length;
-  a->_array  = (double *)calloc(length, sizeof(double));
-  a->_n      = 0;
+  a->_array = (double *)calloc(length, sizeof(double));
+  a->_n = 0;
 }
 
 void append(numarray *a, double value)
@@ -14,11 +14,11 @@ void append(numarray *a, double value)
   if (n_index >= a->_length)
   {
     a->_length *= 2;
-    a->_array   = (double *)realloc(a->_array, a->_length * sizeof(double));
+    a->_array = (double *)realloc(a->_array, a->_length * sizeof(double));
   }
 
   a->_array[n_index] = value;
-  a->_n             += 1;
+  a->_n += 1;
 }
 
 void appendFromArray(numarray *a, double *l, int length)
